@@ -3,6 +3,7 @@ package hig.myrestfulservice.controller;
 import hig.myrestfulservice.bean.User;
 import hig.myrestfulservice.dao.UserDaoService;
 import hig.myrestfulservice.exception.UserNotFoundException;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +36,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<User> createUsers(@RequestBody User user) {
+    public ResponseEntity<User> createUsers(@Valid @RequestBody User user) {
 
         User saveUser = service.save(user);
 
