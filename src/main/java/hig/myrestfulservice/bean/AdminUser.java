@@ -1,5 +1,6 @@
 package hig.myrestfulservice.bean;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
@@ -12,7 +13,8 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+@JsonFilter("UserInfo")
+public class AdminUser {
 
     private Integer id;
 
