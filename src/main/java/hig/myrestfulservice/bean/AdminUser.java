@@ -24,9 +24,7 @@ public class AdminUser {
     @Past(message = "등록일은 미래 날짜를 입력하실 수  없습니다.")
     private Date joinDate;
 
-    @JsonIgnore
     private String password;
 
-    @JsonIgnore
     private String ssn;
 }
