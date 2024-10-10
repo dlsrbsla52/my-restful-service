@@ -44,7 +44,7 @@ public class User {
     @JsonIgnore
     private String ssn;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Post> posts;
 
     public User(Integer id, String name, Date joinDate, String password, String ssn) {
